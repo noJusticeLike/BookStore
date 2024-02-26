@@ -1,0 +1,206 @@
+/* Загальні */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: bisque;
+    font-weight: normal;
+}
+
+/* Головна */
+
+header {
+    background: #c40000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+    padding-right: 10px;
+    border-right: #000 solid 2px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+
+}
+
+ul li a:hover {
+ color: blue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.intro {
+    font-size: 24px;
+    margin: 15px auto;
+}
+
+#main {
+    float: left;
+    margin-right: 20px;
+}
+
+#main-p {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.5;
+}
+
+#categories {
+    border-collapse: collapse;
+    margin: 40px auto 20px;
+}
+
+#categories tr {
+    width: 25%;
+}
+
+#categories th {
+    background: green;
+    border: #000 solid 2px;
+}
+
+#categories td {
+    padding: 5px 0;
+}
+
+.cat-a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    background: orangered;
+    color: #fff;
+    padding: 5px;
+}
+
+.cat-a:hover {
+    color: blue
+}
+
+#categories img {
+    width: 350px;
+    height: 200px;
+}
+
+#categories-cap {
+    font-size: 16px! important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Каталог */
+
+ol {
+    margin-top: 20px;
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+
+ol li {
+    width: 45%;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: black solid 2px;
+    border-radius: 10px;
+}
+
+ol li a {
+    text-decoration: none;
+    color: red;
+}
+
+ol li a:hover {
+    color: blue;
+}
+
+ol li button {
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    background: orangered;
+    color: #fff;
+    border-radius: 10px;
+}
+
+ol li button:hover {
+    background: green;
+}
+
+/* Автори */
+
+dl {
+    margin: 20px;
+}
+
+dt {
+   color: green;
+   text-decoration: underline;
+   font-weight: bold;
+   font-size: 28px;
+}
+
+dd {
+    font-size: 18px;
+    font-style: italic;
+}
+
+#king, #bardugo, #sapkovskiy {
+    margin-top: 20px;
+}
+
+/* Контакти */
+
+#contacts {
+    width: 50%;
+    border: black solid 5px;
+    border-collapse: collapse;
+    margin: 40px auto 10px;
+    background-color: aqua;
+}
+
+#contacts th {
+    background-color: greenyellow;
+    text-align: center;
+}
+
+#contacts th,td {
+    border: brown solid 2px;
+    padding: 10px;
+}
+
+#contacts td {
+    text-align: left;
+}
+
+#back-to-main {
+    text-align: center;
+}
+
+#back-to-main a {
+    text-decoration: none;
+    color: violet;
+    font-style: oblique;
+}
+
+#back-to-main a:hover {
+    color: pink;
+}
