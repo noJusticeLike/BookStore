@@ -23,24 +23,6 @@ ul {
     padding: 20px;
 }
 
-ul li {
-    display: inline;
-    margin-right: 20px;
-    padding-right: 10px;
-    border-right: #000 solid 2px;
-}
-
-ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-
-}
-
-ul li a:hover {
- color: blue;
-}
-
 h1 {
     text-align: center;
 }
@@ -113,38 +95,6 @@ ol {
     list-style-position: inside;
 }
 
-ol li {
-    width: 45%;
-    float: left;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: black solid 2px;
-    border-radius: 10px;
-}
-
-ol li a {
-    text-decoration: none;
-    color: red;
-}
-
-ol li a:hover {
-    color: blue;
-}
-
-ol li button {
-    width: 200px;
-    height: 40px;
-    margin-top: 20px;
-    background: orangered;
-    color: #fff;
-    border-radius: 10px;
-}
-
-ol li button:hover {
-    background: green;
-}
-
 /* Автори */
 
 dl {
@@ -203,4 +153,85 @@ dd {
 
 #back-to-main a:hover {
     color: pink;
+}
+
+/* Сусідні селектори */
+
+i + b {
+    color: white;
+    font-size: 18px;
+    background-color: black;
+}
+
+strong + mark {
+    color: red;;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* Контекстні селектори */
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+    padding-right: 10px;
+    border-right: #000 solid 2px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+
+}
+
+ul li a:hover {
+ color: blue;
+}
+
+ol li {
+    width: 45%;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: black solid 2px;
+    border-radius: 10px;
+}
+
+ol li a {
+    text-decoration: none;
+    color: red;
+}
+
+ol li a:hover {
+    color: blue;
+}
+
+ol li button {
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    background: orangered;
+    color: #fff;
+    border-radius: 10px;
+}
+
+ol li button:hover {
+    background: green;
+}
+
+/* Дочірні селектори */
+
+p > em {
+    color: green;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+a > b {
+    font-style: normal;
+    color: blueviolet;
+    font-size: 28px;
 }
