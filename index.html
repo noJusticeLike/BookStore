@@ -6,11 +6,6 @@
     <meta name="author" content="Слива Денис">
     <title>Головна</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        ul li a {
-            color: white;
-        }
-    </style>
 </head>
 <body>
 
@@ -24,39 +19,59 @@
     </header>
 
     <main>
-        <h1 class="intro">Вітаємо на сайті нашого книжкового магазину!</h1>
         <img  id="main" src="images/main.png" alt="Alice">
+        <h1 class="intro">Вітаємо на сайті нашого книжкового магазину!</h1>
         <p id="main-p" style="font-style: normal;">Попри стрімкий розвиток інформаційних технологій і постійні розмови про переваги електронних книг, 
             класичні паперові книги зовсім не втрачають своєї популярності. 
-            Говорив же Умберто Еко: <em>“Не сподівайтеся позбутися книжок”</em>. 
+            Говорив же Умберто Еко: <span>“Не сподівайтеся позбутися книжок”</span>. 
             Відомо, що справжні поціновувачі літератури звертають увагу не лише на текст, а й на його поліграфічне втілення. 
             Сьогодні звичайною книжкою читачів-гурманів уже годі здивувати, дедалі частіше вона набуває рис мистецького об'єкта. 
             Вишукана обкладинка, намальована віртуозним дизайнером, цікаві ілюстрації, що увиразнюють прочитане, 
             спеціальний папір, який дарує приємні тактильні й візуальні враження - нині це невід'ємні атрибути хорошої книжки.
-             І можна сміливо стверджувати, що найкращі книги українською мовою, які з'являються останнім часом, справді поєднують у собі всі ці деталі. 
-             Їх надзвичайно приємно читати, дарувати та отримувати в подарунок. <em>А найліпше їх обирати саме в нашій книгарні! </em>
-            </p>
-        <table id="categories">
-            <caption id="categories-cap" style="font-size: 24px;">Всі розділи</caption>
-            <thead>
-                <tr><th>Каталог</th><th>Автори</th><th>Контактна інформація</th><th>Цікаві книги</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="images/collection.jpg" alt="Catalogue"></td>
-                    <td><img src="images/authors.jpg" alt="Authors"></td>
-                    <td><img src="images/contacts.jpg" alt="Contacts"></td>
-                    <td><img src="images/best.jpg" alt="Best books"></td>
-                </tr>
-                <tr>
-                    <td><a class="cat-a"  href="catalog.html">Весь асортимент товарів тут</a></td>
-                    <td><a class="cat-a" href="authors.html">Про всіх авторів тут</a></td>
-                    <td><a class="cat-a" href="contacts.html">Інформація про нас тут</a></td>
-                    <td><a class="cat-a" href="https://www.goodreads.com/list/show/264.Books_That_Everyone_Should_Read_At_Least_Once">Список найцікавіших книжок тут</a></td>
-                </tr>
-            </tbody>
-        </table>
+            І можна сміливо стверджувати, що найкращі книги українською мовою, які з'являються останнім часом, справді поєднують у собі всі ці деталі. 
+            Їх надзвичайно приємно читати, дарувати та отримувати в подарунок. <span>А найліпше їх обирати саме в нашій книгарні! </span>
+        </p>
 
+        <div class="recomendations">
+            <h2>Книгарня рекомендує:</h2>
+            <div class="rec-books">
+                <img src="images/rec_book1.jpg" alt="Rec1">
+                <img src="images/rec_book2.jpg" alt="Rec2">
+                <img src="images/rec_book3.jpg" alt="Rec3">
+                <img src="images/rec_book4.jpg" alt="Rec4">
+            </div>
+        </div>
+
+        <div class="cards-container">
+            <div class="card">
+                <img src="images/collection.jpg" alt="Collection">
+                <div class="card-info">
+                    <h2>Асортимент</h2>
+                    <a href="catalog.html">Перейти</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/authors.jpg" alt="Authors">
+                <div class="card-info">
+                    <h2>Автори</h2>
+                    <a href="authors.html">Перейти</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/contacts.jpg" alt="Contacts">
+                <div class="card-info">
+                    <h2>Контакти</h2>
+                    <a href="contacts.html">Перейти</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/best.jpg" alt="Best">
+                <div class="card-info">
+                    <h2>Найкращі книжки</h2>
+                    <a href="catalog.html">Перейти</a>
+                </div>
+            </div>
+        </div>
     </main>
         
 
