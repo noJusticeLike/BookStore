@@ -52,6 +52,18 @@ main {
     margin-top: 75px;
 }
 
+#dialog {
+    background-color: inherit;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+#dialog:hover {
+    cursor: pointer;
+}
+
 .intro {
     font-size: 24px;
     margin: 15px auto;
@@ -158,6 +170,37 @@ main {
     text-decoration: none;
 }
 
+#dev {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dev:hover {
+    cursor: pointer;
+}
+
+#compare {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#compare:hover {
+    cursor: pointer;
+}
+
+#redirect {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+#redirect:hover {
+    cursor: pointer;
+}
+
 /* Каталог */
 
 .catalogue-header {
@@ -226,6 +269,19 @@ main {
 .book-card svg:hover {
     cursor: pointer;
     color: green;
+}
+
+#manipulate {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+#manipulate:hover {
+    cursor: pointer;
 }
 
 /* Автори */
