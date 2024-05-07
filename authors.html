@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        document.write("<h1 class='authors-header'>Автори</h1>");
-    </script>
+    <h1 class='authors-header'>Автори</h1>
     <div class="cards-container">
         <div class="author-card">
             <div class="author-left">
@@ -57,15 +55,31 @@
             </div>
         </div>
     </div>
+
+    <div class="authors-list">
+        <h2>Найвідоміші письменники світу</h2>
+        <ol>
+            <li>Вільям Шекспір</li>
+            <li>Чарльз Дікенс</li>
+            <li>Агата Крісті</li>
+            <li>Джоан Роулінг</li>
+            <li>Франц Кафка</li>
+            <li>Джордж Орвелл</li>
+            <li>Марк Твен</li>
+            <li>Альбер Камю</li>
+            <li>Рей Бредбері</li>
+            <li>Стівен Кінг</li>
+        </ol>
+    </div>
     <script>
-        let poll = confirm("Чи подобаються вам твори Стівена Кінга?");
-        if (poll) {
-            alert("Вам подобаються книги авторства Стівена Кінга");
-        }
-        else {
-            alert("Вам не подобаються книги авторства Стівена Кінга");
-        }
+         const authorsList = document.querySelector('.authors-list');
+
+        authorsList.onclick = function(event) {
+            let target = event.target;
+            if (target.tagName === 'LI') {
+                target.classList.toggle('highlighted');
+            }
+        };
     </script>
-    <script src="script_authors.js"></script>
 </body>
 </html>

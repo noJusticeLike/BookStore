@@ -10,32 +10,34 @@
 <body>
 
     <header>
-            <ul>
-                <li><a href="#">Головна</a></li>
-                <li><a href="catalog.html" >Каталог</a></li>
-                <li><a href="authors.html">Автори</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
-                <li><button id="dialog">Діалог з користувачем</button></li>
+            <ul id="menu">
+                <li><a href="#" data-action="home">Головна</a></li>
+                <li><a href="catalog.html" data-action="catalog">Каталог</a></li>
+                <li><a href="authors.html" data-action="authors">Автори</a></li>
+                <li><a href="contacts.html" data-action="contacts">Контакти</a></li>
             </ul>
     </header>
 
     <main>
-        <img  id="main" src="images/main.png" alt="Alice">
-        <h1 class="intro">Вітаємо на сайті нашого книжкового магазину!</h1>
-        <p id="main-p" style="font-style: normal;">Попри стрімкий розвиток інформаційних технологій і постійні розмови про переваги електронних книг, 
-            класичні паперові книги зовсім не втрачають своєї популярності. 
-            Говорив же Умберто Еко: <span>“Не сподівайтеся позбутися книжок”</span>. 
-            Відомо, що справжні поціновувачі літератури звертають увагу не лише на текст, а й на його поліграфічне втілення. 
-            Сьогодні звичайною книжкою читачів-гурманів уже годі здивувати, дедалі частіше вона набуває рис мистецького об'єкта. 
-            Вишукана обкладинка, намальована віртуозним дизайнером, цікаві ілюстрації, що увиразнюють прочитане, 
-            спеціальний папір, який дарує приємні тактильні й візуальні враження - нині це невід'ємні атрибути хорошої книжки.
-            І можна сміливо стверджувати, що найкращі книги українською мовою, які з'являються останнім часом, справді поєднують у собі всі ці деталі. 
-            Їх надзвичайно приємно читати, дарувати та отримувати в подарунок. <span>А найліпше їх обирати саме в нашій книгарні! </span>
-        </p>
+        <h2 id="close" data-toggle-id="description">Згорнути розділ</h2>
+        <div id="description">
+            <img  id="main" src="images/main.png" alt="Alice">
+            <h1 class="intro">Вітаємо на сайті нашого книжкового магазину!</h1>
+            <p id="main-p" style="font-style: normal;">Попри стрімкий розвиток інформаційних технологій і постійні розмови про переваги електронних книг, 
+                класичні паперові книги зовсім не втрачають своєї популярності. 
+                Говорив же Умберто Еко: <span>“Не сподівайтеся позбутися книжок”</span>. 
+                Відомо, що справжні поціновувачі літератури звертають увагу не лише на текст, а й на його поліграфічне втілення. 
+                Сьогодні звичайною книжкою читачів-гурманів уже годі здивувати, дедалі частіше вона набуває рис мистецького об'єкта. 
+                Вишукана обкладинка, намальована віртуозним дизайнером, цікаві ілюстрації, що увиразнюють прочитане, 
+                спеціальний папір, який дарує приємні тактильні й візуальні враження - нині це невід'ємні атрибути хорошої книжки.
+                І можна сміливо стверджувати, що найкращі книги українською мовою, які з'являються останнім часом, справді поєднують у собі всі ці деталі. 
+                Їх надзвичайно приємно читати, дарувати та отримувати в подарунок. <span>А найліпше їх обирати саме в нашій книгарні! </span>
+            </p>
+     </div>
 
         <div class="recomendations">
             <h2>Книгарня рекомендує:</h2>
-            <div class="rec-books">
+            <div id="rec-books">
                 <img src="images/rec_book1.jpg" alt="Rec1">
                 <img src="images/rec_book2.jpg" alt="Rec2">
                 <img src="images/rec_book3.jpg" alt="Rec3">
@@ -73,13 +75,63 @@
                 </div>
             </div>
         </div>
-        <h2 id="dev">Інформація про розробника</h2>
-        <h2 id="compare">Порівняння рядків</h2>
-        <button id="redirect">Перенаправлення</button>
     </main>
     <script>
-        alert("Вітаємо на сайті нашого книжкового магазину!");
+        let main = document.querySelector("#main");
+        
+        main.addEventListener('click', {
+            handleEvent(event) {
+                alert("Натиснули на " + event.currentTarget);
+                alert("Аліса в Країні Див");
+            }
+        });
+
+        function message() {
+            alert("This is main paragraph");
+        }
+
+        let main_p = document.querySelector("#main-p");
+        main_p.addEventListener('click', message);
+        main_p.removeEventListener('click', message);
+
+
+        class Menu { 
+            constructor(element) { 
+                this._element = element.target; 
+                element.onclick = this.onClick.bind(this);
+                } 
+            home() { 
+                alert('Ви переходите на головну сторінку'); 
+            } 
+            catalog() { 
+                alert('Ви переходите на сторінку каталогу'); 
+            } 
+            authors() { 
+                alert('Ви переходите на сторінку авторів'); 
+            } 
+            contacts() { 
+                alert('Ви переходите на сторінку контактів'); 
+            } 
+            onClick(event) { 
+                let action = event.target.dataset.action; 
+                if (action) { 
+                    this[action](); 
+                } 
+            } 
+        } 
+        let menu = document.querySelector('#menu');
+        new Menu(menu); 
+
+        document.addEventListener('click', function(event) {
+            let id = event.target.dataset.toggleId;
+            if (id) {
+                let element = document.getElementById(id);
+                element.hidden = !element.hidden;
+                
+            }
+            else {
+                return;
+            }
+        })
     </script>
-    <script src="script_index.js"></script>
-</body>
 </html>

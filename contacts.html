@@ -13,7 +13,7 @@
   <div class="cards-container">
     <div class="contact-card">
       <div class="contact-left">
-        <h1>Зв'яжіться з нами</h1>
+        <h1 onmouseover="notification()">Зв'яжіться з нами</h1>
         <p>Ми тут, щоб допомогти вам і дати відповідь на будь-яке ваше запитання. З нетерпінням чекаємо на ваші відгуки!</p>
         <h2><span>Наша адреса: </span> <br> Книжковий магазин "BookStore", вул. Шевченка, 12, м. Київ, Україна </h2>
         <h2><span>Телефони нашої служби підтримки: </span> <br> +38096-123-4567(основний) <br> +38068-897-654(додатковий)  </h2>
@@ -26,5 +26,14 @@
   </div>
 
     <h2 id="back-to-main"><a href="index.html">Повернутись <b>на головну </b></a></h2>
+    <script>
+      function notification() {
+        alert("Ви навелися на текст з загальною інформацією");
+      }
+
+      let par = document.querySelector('p');
+      par.onmouseover = notification;
+    
+    </script>
 </body>
 </html>

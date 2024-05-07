@@ -10,7 +10,6 @@
 <body>
 
     <h1 class="catalogue-header">Каталог товарів</h1>
-
     <div class="cards-container">
         <div class="book-card">
             <img src="images/catalog/mersedes.jpg" alt="Mersedes">
@@ -20,7 +19,7 @@
                 Він мав упіймати вбивцю, який за кермом вкраденого "мерседеса" наробив жахливої руйнівної шкоди та вбив десятки людей. 
                 Однак, одного дня, Білл отримує листа від таємничого вбивці, який повідомляє, що планує знову вдарити, і цього разу жертв буде більше. 
                 Це повертає Білла до роботи, і герой розпочинає неймовірно напружену гонку з часом та злочинцем.</p>
-            <button>Детальніше</button>
+            <button class="detailed">Інший бік картки</button>
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"/>
               </svg>                          
@@ -37,7 +36,7 @@
                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"/>
                   </svg> 
-            <button>Детальніше</button>
+            <button class="detailed">Інший бік картки</button>
         </div>
         <div class="book-card">
             <img src="images/catalog/witcher.jpg" alt="Witcher">
@@ -47,7 +46,7 @@
                 Сам головний герой – Геральт із Ривії – мисливець за монстрами, що становлять загрозу життю людей.
                 Книга знайомить нас із Геральтом в різні періоди його життя, коли він подорожує по світу в пошуках роботи, а також з його оточенням: 
                 другом і компаньйоном, бардом Любистком, чарівницею Йенеффер. Отримуємо уяву про те, як доля Геральта в майбутньому буде пов’язана з принцесою Цірі.</p>
-            <button>Детальніше</button>
+            <button class="detailed">Інший бік картки</button>
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"/>
               </svg> 
@@ -60,22 +59,53 @@
                 Ґеральт намагався триматись подалі від політики, але він помітив, що люди все більше знищують представників інших рас. 
                 Тож герой зрештою вплутується в протистояння сильних світу цього. 
                 Тим паче, що в нього з’являється вихованка, маленька Цірі, в якій тече королівська кров.</p>
-            <button>Детальніше</button>
+            <button class="detailed">Інший бік картки</button>
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"/>
               </svg> 
         </div>        
     </div>
-    <button id="manipulate">Маніпуляції з картками</button>
-    <script>
-        let favourite = prompt("Яка ваша улюблена книжка?", "");
-        if (!favourite) {
-            alert("У вас немає улюбленої книжки");
-        }
-        else {
-            alert(`"${favourite}" - ваша улюблена книжка`);
-        }
-    </script>
-    <script src="script_catalog.js"></script>
 </body>
+<script>
+    function clearCardContent(event) {
+        const card = event.target.closest('.book-card');
+        const image = card.querySelector('img');
+        const title = card.querySelector('h2');
+        const author = card.querySelector('a');
+        const description = card.querySelector('p');
+        image.remove();
+        title.textContent = '';
+        author.textContent = '';
+        description.textContent = '';
+    }
+
+    function showBookDetails(event) {
+        const bookDetails = [
+            { releaseYear: '2022', pageCount: 448 }, // Для "Містер Мерседес"
+            { releaseYear: '2020', pageCount: 480 }, // Для "Шістка воронів"
+            { releaseYear: '2018', pageCount: 288 }, // Для "Відьмак: Останнє Бажання"
+            { releaseYear: '2019', pageCount: 320 }  // Для "Відьмак. Меч призначення"
+        ];
+
+        let card = event.target.closest('.book-card');
+        let index = Array.from(card.parentElement.children).indexOf(card);
+        let bookInfo = bookDetails[index];
+
+        let button = card.querySelector('button');
+        button.remove();
+
+        let releaseYear = document.createElement('p');
+        let pageCount = document.createElement('p');
+        releaseYear.textContent = `Рік випуску: ${bookInfo.releaseYear}`;
+        pageCount.textContent = `Кількість сторінок: ${bookInfo.pageCount}`;
+        card.appendChild(releaseYear);
+        card.appendChild(pageCount);
+    }
+
+    let detailedButtons = document.querySelectorAll('.detailed');
+    detailedButtons.forEach(button => {
+        button.addEventListener('click', clearCardContent);
+        button.addEventListener('click', showBookDetails);
+    });
+</script>
 </html>
