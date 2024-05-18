@@ -81,10 +81,10 @@
 
     function showBookDetails(event) {
         const bookDetails = [
-            { releaseYear: '2022', pageCount: 448 }, // Для "Містер Мерседес"
-            { releaseYear: '2020', pageCount: 480 }, // Для "Шістка воронів"
-            { releaseYear: '2018', pageCount: 288 }, // Для "Відьмак: Останнє Бажання"
-            { releaseYear: '2019', pageCount: 320 }  // Для "Відьмак. Меч призначення"
+            { releaseYear: '2023', pageCount: 544 }, // Для "Містер Мерседес"
+            { releaseYear: '2021', pageCount: 544 }, // Для "Шістка воронів"
+            { releaseYear: '2022', pageCount: 288 }, // Для "Відьмак: Останнє Бажання"
+            { releaseYear: '2022', pageCount: 368 }  // Для "Відьмак. Меч призначення"
         ];
 
         let card = event.target.closest('.book-card');
@@ -108,4 +108,5 @@
         button.addEventListener('click', showBookDetails);
     });
 </script>
+<script src="selected.js"></script>
 </html>

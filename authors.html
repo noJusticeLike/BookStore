@@ -57,29 +57,34 @@
     </div>
 
     <div class="authors-list">
-        <h2>Найвідоміші письменники світу</h2>
-        <ol>
-            <li>Вільям Шекспір</li>
-            <li>Чарльз Дікенс</li>
-            <li>Агата Крісті</li>
-            <li>Джоан Роулінг</li>
-            <li>Франц Кафка</li>
-            <li>Джордж Орвелл</li>
-            <li>Марк Твен</li>
-            <li>Альбер Камю</li>
-            <li>Рей Бредбері</li>
-            <li>Стівен Кінг</li>
-        </ol>
+        <h2 class="authors-list-header">Найвідоміші письменники світу і їх твори</h2>
+        <div class="author-interactive">
+            <ol class="authors-list-ol">
+                <li class="authors-li">Вільям Шекспір</li>
+                <li class="authors-li">Чарльз Дікенс</li>
+                <li class="authors-li">Агата Крісті</li>
+                <li class="authors-li">Джоан Роулінг</li>
+                <li class="authors-li">Франц Кафка</li>
+                <li class="authors-li">Джордж Орвелл</li>
+                <li class="authors-li">Марк Твен</li>
+                <li class="authors-li">Альбер Камю</li>
+                <li class="authors-li">Рей Бредбері</li>
+                <li class="authors-li">Стівен Кінг</li>
+            </ol>
+            <ol class="authors-list-ol">
+                <li class="authors-li light">"І не лишилось жодного"</li>
+                <li class="authors-li light">"Перевтілення"</li>
+                <li class="authors-li light">"Ромео і Джульєтта"</li>
+                <li class="authors-li light">"Пригоди Гекльберрі Фінна"</li>
+                <li class="authors-li light">"Пригоди Олівера Твіста"</li>
+                <li class="authors-li light">"Кладовище домашніх тварин"</li>
+                <li class="authors-li light">"Чума"</li>
+                <li class="authors-li light">"451° за Фаренгейтом"</li>
+                <li class="authors-li light">"Колгосп тварин"</li>
+                <li class="authors-li light">"Гаррі Поттер і келих вогню"</li>
+            </ol>
+        </div>
     </div>
-    <script>
-         const authorsList = document.querySelector('.authors-list');
-
-        authorsList.onclick = function(event) {
-            let target = event.target;
-            if (target.tagName === 'LI') {
-                target.classList.toggle('highlighted');
-            }
-        };
-    </script>
 </body>
+<script src="dragging.js"></script>
 </html>
